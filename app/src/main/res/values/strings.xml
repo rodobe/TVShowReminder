@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Test</string>
+    <string name="test_base_url">https://hn.algolia.com/api/v1/</string>
+</resources>
