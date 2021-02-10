@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.tooldev.wabiPlay.home.homeView.homeViewModels.HomeViewModel" />
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="¿Qué estás buscando?">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/text_input_edit_text_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={viewModel.searchObservableField}"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <CheckBox
+                android:id="@+id/checkbox_movies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@={viewModel.moviesObservableField}"/>
+
+            <CheckBox
+                android:id="@+id/checkbox_series"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@={viewModel.seriesObservableField}"/>
+
+            <CheckBox
+                android:id="@+id/checkbox_episodes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@={viewModel.episodesObservableField}"/>
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Buscar"
+            android:onClick="@{() -> viewModel.search()}"/>
+
+    </LinearLayout>
+
+</layout>
