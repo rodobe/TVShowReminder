@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.tooldev.tvShowReminder.content.contentView.viewModels.TvShowsDetailViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/linear_tvshow_overview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.tooldev.tvShowReminder.util.CustomScrollView
+            android:id="@+id/nestedscrolle_tvshow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolbar_tvshow"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:backgroundTint="@color/transparent"
+                    app:navigationIcon="@drawable/ic_back_icon"/>
+
+                <LinearLayout
+                    android:id="@+id/content_tvshows_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar_tvshow"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardView_poster"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="6dp"
+                        android:layout_gravity="center_horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageview_poster"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/textview_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="24dp"
+                        android:textStyle="bold"
+                        android:textSize="24sp"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/textview_year"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="2dp"
+                        android:textSize="16sp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/materialbutton_suscripto"
+                        style="@style/Widget.SubscribeOutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="24dp"
+                        android:textSize="16sp"
+                        android:onClick="@{ () -> viewModel.subscribeTvShow()}"
+                        android:text="Suscribite"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/textview_overview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity=""
+                        android:text="Overview"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:lineHeight="24sp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginStart="32dp"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/textview_overview_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:lineHeight="24sp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="72dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginEnd="32dp"/>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.tooldev.tvShowReminder.util.CustomScrollView>
+
+    </LinearLayout>
+
+</layout>

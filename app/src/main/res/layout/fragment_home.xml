@@ -6,63 +6,31 @@
 
         <variable
             name="viewModel"
-            type="com.tooldev.wabiPlay.home.homeView.homeViewModels.HomeViewModel" />
+            type="com.tooldev.tvShowReminder.home.homeView.homeViewModels.HomeViewModel" />
 
     </data>
 
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:background="@color/black_two">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/text_input_layout_search"
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_home_tvshows"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="TV Show Reminder"
+            app:titleTextColor="@color/white" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_home_tvshows"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="¿Qué estás buscando?">
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_home_tvshows"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/text_input_edit_text_search"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@={viewModel.searchObservableField}"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center">
-
-            <CheckBox
-                android:id="@+id/checkbox_movies"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@={viewModel.moviesObservableField}"/>
-
-            <CheckBox
-                android:id="@+id/checkbox_series"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@={viewModel.seriesObservableField}"/>
-
-            <CheckBox
-                android:id="@+id/checkbox_episodes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@={viewModel.episodesObservableField}"/>
-
-        </LinearLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Buscar"
-            android:onClick="@{() -> viewModel.search()}"/>
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

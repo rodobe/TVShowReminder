@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.tooldev.wabiPlay.splash.splashView.splashViewModels.SplashViewModel" />
+            type="com.tooldev.tvShowReminder.splash.splashView.splashViewModels.SplashViewModel" />
 
     </data>
 
@@ -21,8 +21,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:src="@drawable/ic_wabi_icon"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
